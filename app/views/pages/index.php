@@ -9,5 +9,10 @@
 <body>
     <h1><?php echo $data['title']; ?></h1>
     <p>This is the MVC Demo homepage.</p>
+    <ul>
+        <?php foreach($data['users'] as $user) : ?>
+            <li><?php echo $user->name; ?> (<?php echo $user->email; ?>)</li>
+        <?php endforeach; ?>
+    </ul>
 </body>
 </html>
