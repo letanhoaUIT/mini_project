@@ -1,4 +1,3 @@
-// models/User.php
 
 <?php
 require_once 'config/config.php'; //include code of file config.php and included only once during execution
