@@ -15,5 +15,7 @@
         <br>
         <button type="submit">Create</button>
     </form>
+    <br>
+    <a href="index.php?controller=item&action=index">Back to List</a>
 </body>
 </html>

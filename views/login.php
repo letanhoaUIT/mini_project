@@ -18,5 +18,6 @@
         <br>
         <button type="submit">Login</button>
     </form>
+    <a href="index.php?controller=auth&action=register">Register</a> <!--chuyen huong den register -->
 </body>
 </html>
