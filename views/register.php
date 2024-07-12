@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Register</title>
+    <link rel="stylesheet" href="/assets/css/LoginPage.css">
 </head>
 <body>
-    <h2>Register</h2>
+    
     <form action="index.php?controller=auth&action=register" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
+    <h3>REGISTER</h3>
+        <input type="text" id="username" name="username" required placeholder="Username">
+        <input type="password" id="password" name="password" required placeholder="Password">
         <button type="submit">Register</button>
+        <a href="index.php?controller=auth&action=login" class="italic-link">Already have an account?</a>
     </form>
-    <a href="index.php?controller=auth&action=login">Login</a>
+    
 </body>
 </html>

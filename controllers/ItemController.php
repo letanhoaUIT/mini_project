@@ -10,7 +10,7 @@ class ItemController {
     }
 
     public function index() {
-        $userId = Session::get('user_id');
+        $userId = Session::get('user_id'); //lấy user_id từ session làm việc 
         $items = $this->itemModel->getAllByUserId($userId);
         require 'views/item/list.php';
     }

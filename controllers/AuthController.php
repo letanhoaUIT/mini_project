@@ -40,7 +40,7 @@ class AuthController {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $username = $_POST['username'];
             $password = $_POST['password'];
-            $remember = isset($_POST['remember']);
+            $remember = isset($_POST['remember']); //kiểm tra remember có giá tri khác null
 
             $user = $this->userModel->findByUsername($username);
             if ($user && password_verify($password, $user['password'])) {
@@ -50,7 +50,7 @@ class AuthController {
                     $this->userModel->updateRememberToken($user['id'], $token);
                     Cookie::set('remember_token', $token, time() + (86400 * 30)); // 30 days
                 }
-                header('Location: index.php');
+                header('Location: index.php?controller=item&action=index');
                 exit();
             } else {
                 echo "Invalid username or password.";
@@ -63,10 +63,11 @@ class AuthController {
     public function logout() {
         Session::destroy();
         Cookie::delete('remember_token');
-        header('Location: index.php?controller=auth&action=login');
-        exit();
-    }
-    
-}
 
+         // Trả về kết quả là JSON
+         header('Content-Type: application/json');
+         echo json_encode(['success' => true]);
+
+    }  
+}
 ?>

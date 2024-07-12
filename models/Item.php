@@ -11,7 +11,7 @@ class Item {
     public function getAllByUserId($userId) {
         $stmt = $this->db->prepare("SELECT * FROM items WHERE user_id = :user_id");
         $stmt->execute(['user_id' => $userId]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);  // trả về kết quả dưới dạng mảng kết hợp 
     }
 
     public function create($userId, $title, $content) {
